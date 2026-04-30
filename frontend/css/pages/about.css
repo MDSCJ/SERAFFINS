@@ -330,8 +330,9 @@ html[data-theme="dark"] .about-showcase__meta span {
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%);
   border-color: rgba(255, 255, 255, 0.08);
   border-top-color: rgba(255, 255, 255, 0.18);
-  color: #e2e8f0;
+  color: #61666e;
 }
+
 
 html[data-theme="dark"] .about-showcase__dna {
   background:
@@ -358,7 +359,20 @@ html[data-theme="dark"] .founder-link--muted {
   border-color: rgba(178, 206, 232, 0.28);
   background: rgba(178, 206, 232, 0.12);
 }
+/* Reading Theme overrides for the meta spans */
+html[data-theme="reading"] .about-showcase__meta span {
+  background: #fdf6e3; /* A soft, warm off-white (like a book page) */
+  border: 1px solid #e5dfcb;
+  color: #1a1a1a; /* A very dark, near-black for maximum readability */
+  font-weight: 700;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
 
+/* Optional: Keep the left accent border but make it fit the reading vibe */
+html[data-theme="reading"] .about-showcase__meta span::before {
+  background: linear-gradient(180deg, #2563eb 0%, #1e40af 100%);
+  opacity: 1;
+}
 html[data-theme="dark"] .founder-edu {
   color: #b8cce1;
 }

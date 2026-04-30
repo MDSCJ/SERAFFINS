@@ -625,6 +625,16 @@ html[data-theme="dark"] body.shark-cnn-view .cnn-container .btn-logout:hover {
   background: linear-gradient(120deg, rgba(210, 52, 52, 0.98), rgba(156, 24, 24, 0.98));
   box-shadow: 0 14px 28px rgba(120, 20, 20, 0.34);
 }
+
+.fade-in {
+  animation: result-fade-in 420ms ease;
+}
+
+@keyframes result-fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(6px);
+  }
   100% {
     opacity: 1;
     transform: translateY(0) scale(1);

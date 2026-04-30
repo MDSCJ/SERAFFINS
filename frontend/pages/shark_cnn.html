@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shark Species CNN</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Inter:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../frontend/css/style.css" />
+    <link rel="stylesheet" href="../../frontend/css/pages/shark.css" />
+    <script defer src="../../frontend/javascript/main.js"></script>
+</head>
+<body class="shark-cnn-view">
+    <canvas id="liquid-canvas" aria-hidden="true"></canvas>
+    <div class="ambient-layer"></div>
+
+    <header class="glass nav-wrap">
+        <div class="nav-brand">SERRAFINS</div>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-navigation" aria-label="Open menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav id="main-navigation" class="main-nav">
+            <a href="../../index.html">Home</a>
+            <a href="packages.html">Packages</a>
+            <a href="about.html">About</a>
+            <a href="dashboard.html">Dashboard</a>
+        </nav>
+    </header>
+
+    <main class="page-shell">
+        <section class="shark-cnn-page">
+            <div class="cnn-container glass">
+                
+                <div class="version-info">
+                    <h3>Version Roadmap</h3>
+                    <div class="roadmap">
+                        <div class="roadmap-item completed">
+                            <span class="version-badge">v1.0</span>
+                            <p>Trained on 8,000 images with on-site CNN inference</p>
+                        </div>
+                        <div class="roadmap-item completed">
+                            <span class="version-badge">v2.0</span>
+                            <p>Expanded training pipeline completed with 32,000+ images and stronger accuracy</p>
+                        </div>
+                        <div class="roadmap-item pending">
+                            <span class="version-badge">v2.1</span>
+                            <p>Extended species database (50+ species)</p>
+                        </div>
+                    </div>
+
+                    <div class="cnn-resource-drawer glass" style="margin-top: 2rem; padding: 1.5rem; border-radius: 8px;">
+                        <div style="margin-bottom: 1.5rem;">
+                            <h4 style="margin: 0;">Training resources</h4>
+                            <small>Open the dataset, epoch 99, and deploy-ready model links</small>
+                        </div>
+
+                        <div class="cnn-resource-drawer__body">
+                            <a class="cnn-resource-link cnn-resource-link--tutorial" href="shark_tutorial.html">
+                                <span class="cnn-resource-link__eyebrow">Learn and build</span>
+                                <strong>View tutorial (copy-paste friendly)</strong>
+                                <small>New page with step-by-step local and Kaggle workflows.</small>
+                            </a>
+
+                            <a class="cnn-resource-link" href="#" data-password-protected="true" target="_blank" rel="noopener noreferrer">
+                                <span class="cnn-resource-link__eyebrow">Try from scratch</span>
+                                <strong>Try our dataset</strong>
+                                <small>32,000 images for building the detector from the ground up.</small>
+                            </a>
+
+                            <a class="cnn-resource-link" href="#" data-password-protected="true" target="_blank" rel="noopener noreferrer">
+                                <span class="cnn-resource-link__eyebrow">Improve from the middle</span>
+                                <strong>Try our 99 epoch</strong>
+                                <small>Use the earlier training checkpoint with the previous metrics.</small>
+                            </a>
+
+                            <a class="cnn-resource-link cnn-resource-link--primary" href="#" data-password-protected="true" target="_blank" rel="noopener noreferrer">
+                                <span class="cnn-resource-link__eyebrow">Deploy ready</span>
+                                <strong>Current hosted model (YOLO-M, 8,000 images)</strong>
+                                <small>This smaller model is hosted for quick use. For the larger 32,000-image model, download and run locally using the two links below.</small>
+                            </a>
+
+                            <div class="cnn-resource-link-group" aria-label="YOLO resources">
+                                <a class="cnn-resource-link cnn-resource-link--compact" href="#" data-password-protected="true" target="_blank" rel="noopener noreferrer">
+                                    <span class="cnn-resource-link__eyebrow">Lightweight</span>
+                                    <strong>YOLO-S</strong>
+                                </a>
+
+                                <a class="cnn-resource-link cnn-resource-link--compact" href="#" data-password-protected="true" target="_blank" rel="noopener noreferrer">
+                                    <span class="cnn-resource-link__eyebrow">Balanced</span>
+                                    <strong>YOLO-M</strong>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <script>
+        const passwordProtectedLinks = document.querySelectorAll('.cnn-resource-link[data-password-protected="true"]');
+
+        passwordProtectedLinks.forEach((link) => {
+            link.addEventListener('click', (event) => {
+                const href = (link.getAttribute('href') || '').trim();
+                if (!href || href === '#') {
+                    event.preventDefault();
+                    alert('This file link is not available yet.');
+                    return;
+                }
+
+                alert('Password for this file: www.serrafins.com');
+            });
+        });
+    </script>
+</body>
+</html>
