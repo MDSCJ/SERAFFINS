@@ -78,7 +78,7 @@
 }
 
 .features li:before {
-  content: "\2713";
+  content: "✓";
   position: absolute;
   left: 0;
   color: var(--primary);
