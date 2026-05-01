@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shark Species Recognition Key</title>
+    <meta name="description" content="A themed shark key app with mini datasheets for every shark image in the project." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Inter:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../frontend/css/style.css" />
+    <link rel="stylesheet" href="../../frontend/css/pages/shark.css" />
+    <script defer src="../../frontend/javascript/main.js"></script>
+</head>
+<body class="shark-key-view">
+    <canvas id="liquid-canvas" aria-hidden="true"></canvas>
+    <div class="ambient-layer"></div>
+
+    <header class="glass nav-wrap">
+        <div class="nav-brand">SERRAFINS</div>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-navigation" aria-label="Open menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav id="main-navigation" class="main-nav">
+            <a href="../../index.html">Home</a>
+            <a href="packages.html">Packages</a>
+            <a href="about.html">About</a>
+            <a href="dashboard.html">Dashboard</a>
+        </nav>
+    </header>
+
+    <main class="page-shell">
+        <section class="shark-key-page">
+            <a id="shark-key-app-link" href="https://drive.google.com/file/d/1MuLYfgtJJ316mV8qDTx9jZCLyuHSwQW4/view?usp=sharing" hidden aria-hidden="true" tabindex="-1">Shark Key App</a>
+            <header class="shark-key-hero glass">
+                <p class="subtitle">Visual shark key app</p>
+                <h1>Shark Species Recognition Key</h1>
+                <p>
+                    Open the themed app, download a copy if you want it locally, and use the compact datasheets below to
+                    identify every shark image saved in the <strong>frontend/images/sharks</strong> folder.
+                </p>
+                <div class="actions">
+                    <a class="btn btn-primary" href="https://drive.google.com/file/d/1MuLYfgtJJ316mV8qDTx9jZCLyuHSwQW4/view?usp=sharing" target="_blank" rel="noopener noreferrer">Open Shark Key App</a>
+                    <a class="btn btn-soft" href="https://drive.google.com/file/d/1MuLYfgtJJ316mV8qDTx9jZCLyuHSwQW4/view?usp=sharing" target="_blank" rel="noopener noreferrer">Download Shark Key App</a>
+                </div>
+            </header>
+
+            <section class="shark-key-download glass" aria-labelledby="app-access-title">
+                <div class="species-header">
+                    <p class="species-code">App access</p>
+                    <h3 id="app-access-title">Password-protected download</h3>
+                </div>
+                <div class="key-app-panel">
+                    <div class="key-app-panel__copy">
+                        <p>
+                            The download uses the same theme as the rest of the site. If a password prompt appears,
+                            enter <strong>www.seraffins.com</strong>.
+                        </p>
+                        <p class="key-app-password"><span>Password:</span> www.seraffins.com</p>
+                    </div>
+                    <div class="key-app-panel__actions actions">
+                        <a class="btn btn-primary" href="https://drive.google.com/file/d/1MuLYfgtJJ316mV8qDTx9jZCLyuHSwQW4/view?usp=sharing" target="_blank" rel="noopener noreferrer">Open App</a>
+                        <a class="btn btn-soft" href="https://drive.google.com/file/d/1MuLYfgtJJ316mV8qDTx9jZCLyuHSwQW4/view?usp=sharing" target="_blank" rel="noopener noreferrer">Download Copy</a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="key-grid" aria-label="Mini datasheets for every shark image">
+                <article class="species-card glass">
+                    <div class="species-thumb-wrap">
+                        <img class="species-thumb" src="../../frontend/images/sharks/basking.jpg" alt="Basking shark" loading="lazy" />
+                    </div>
+                    <div class="species-header">
+                        <p class="species-code">Slow filter feeder</p>
+                        <h3>Basking Shark</h3>
+                    </div>
+                    <ul class="characteristics">
+                        <li><strong>Size:</strong> One of the largest sharks in the ocean</li>
+                        <li><strong>Clue:</strong> Huge mouth, tiny teeth, slow cruising behavior</li>
+                        <li><strong>Habitat:</strong> Cool temperate waters and surface feeding zones</li>
+                    </ul>
+                </article>
+
+                <article class="species-card glass">
+                    <div class="species-thumb-wrap">
+                        <img class="species-thumb" src="../../frontend/images/sharks/blacktip.jpg" alt="Blacktip shark" loading="lazy" />
+                    </div>
+                    <div class="species-header">
+                        <p class="species-code">Fast coastal hunter</p>
+                        <h3>Blacktip Shark</h3>
+                    </div>
+                    <ul class="characteristics">
+                        <li><strong>Size:</strong> Medium-sized and streamlined</li>
+                        <li><strong>Clue:</strong> Dark tips on the fins, especially the first dorsal fin</li>
+                        <li><strong>Habitat:</strong> Warm coastal waters, reefs, and bays</li>
+                    </ul>
+                </article>
+
+                <article class="species-card glass">
+                    <div class="species-thumb-wrap">
+                        <img class="species-thumb" src="../../frontend/images/sharks/blue.jpg" alt="Blue shark" loading="lazy" />
+                    </div>
+                    <div class="species-header">
+                        <p class="species-code">Ocean traveler</p>
+                        <h3>Blue Shark</h3>
+                    </div>
+                    <ul class="characteristics">
+                        <li><strong>Size:</strong> Long and slender with a sleek profile</li>
+                        <li><strong>Clue:</strong> Deep blue back and pale belly</li>
+                        <li><strong>Habitat:</strong> Open ocean and deep pelagic waters</li>
+                    </ul>
+                </article>
+
+                <article class="species-card glass">
+                    <div class="species-thumb-wrap">
+                        <img class="species-thumb" src="../../frontend/images/sharks/bull.jpg" alt="Bull shark" loading="lazy" />
+                    </div>
+                    <div class="species-header">
+                        <p class="species-code">Brackish-water survivor</p>
+                        <h3>Bull Shark</h3>
+                    </div>
+                    <ul class="characteristics">
+                        <li><strong>Size:</strong> Thick-bodied and powerful</li>
+                        <li><strong>Clue:</strong> Robust snout and aggressive-looking silhouette</li>
+                        <li><strong>Habitat:</strong> Rivers, estuaries, and warm coastal waters</li>
+                    </ul>
+                </article>
+
+                <article class="species-card glass">
+                    <div class="species-thumb-wrap">
+                        <img class="species-thumb" src="../../frontend/images/sharks/greatwhite.jpg" alt="Great white shark" loading="lazy" />
+                    </div>
+                    <div class="species-header">
+                        <p class="species-code">Apex predator</p>
+                        <h3>Great White Shark</h3>
+                    </div>
+                    <ul class="characteristics">
+                        <li><strong>Size:</strong> Large, muscular, and iconic</li>
+                        <li><strong>Clue:</strong> Conical snout and dramatic counter-shading</li>
+                        <li><strong>Habitat:</strong> Coastal shelves and offshore hunting grounds</li>
+                    </ul>
+                </article>
+
+                <article class="species-card glass">
+                    <div class="species-thumb-wrap">
+                        <img class="species-thumb" src="../../frontend/images/sharks/hammerhead.jpg" alt="Hammerhead shark" loading="lazy" />
+                    </div>
+                    <div class="species-header">
+                        <p class="species-code">Wide-angled sensor</p>
+                        <h3>Hammerhead Shark</h3>
+                    </div>
+                    <ul class="characteristics">
+                        <li><strong>Size:</strong> Varies by species, usually medium to large</li>
+                        <li><strong>Clue:</strong> Distinct hammer-shaped head for wider sensing</li>
+                        <li><strong>Habitat:</strong> Coastal waters, reefs, and island drop-offs</li>
+                    </ul>
+                </article>
+
+                <article class="species-card glass">
+                    <div class="species-thumb-wrap">
+                        <img class="species-thumb" src="../../frontend/images/sharks/mako.jpg" alt="Shortfin mako shark" loading="lazy" />
+                    </div>
+                    <div class="species-header">
+                        <p class="species-code">High-speed sprinter</p>
+                        <h3>Shortfin Mako</h3>
+                    </div>
+                    <ul class="characteristics">
+                        <li><strong>Size:</strong> Lean, athletic, and built for speed</li>
+                        <li><strong>Clue:</strong> Pointed snout and crescent tail</li>
+                        <li><strong>Habitat:</strong> Offshore pelagic waters</li>
+                    </ul>
+                </article>
+
+                <article class="species-card glass">
+                    <div class="species-thumb-wrap">
+                        <img class="species-thumb" src="../../frontend/images/sharks/thresher.jpg" alt="Thresher shark" loading="lazy" />
+                    </div>
+                    <div class="species-header">
+                        <p class="species-code">Tail-powered hunter</p>
+                        <h3>Thresher Shark</h3>
+                    </div>
+                    <ul class="characteristics">
+                        <li><strong>Size:</strong> Slender body with a very long tail</li>
+                        <li><strong>Clue:</strong> Tail used like a whip to stun prey</li>
+                        <li><strong>Habitat:</strong> Open water and continental shelf edges</li>
+                    </ul>
+                </article>
+
+                <article class="species-card glass">
+                    <div class="species-thumb-wrap">
+                        <img class="species-thumb" src="../../frontend/images/sharks/tiger.jpg" alt="Tiger shark" loading="lazy" />
+                    </div>
+                    <div class="species-header">
+                        <p class="species-code">Generalist feeder</p>
+                        <h3>Tiger Shark</h3>
+                    </div>
+                    <ul class="characteristics">
+                        <li><strong>Size:</strong> Large, heavy, and unmistakable</li>
+                        <li><strong>Clue:</strong> Striped pattern in juveniles and broad snout</li>
+                        <li><strong>Habitat:</strong> Tropical and subtropical coastal waters</li>
+                    </ul>
+                </article>
+
+                <article class="species-card glass">
+                    <div class="species-thumb-wrap">
+                        <img class="species-thumb" src="../../frontend/images/sharks/whale.jpg" alt="Whale shark" loading="lazy" />
+                    </div>
+                    <div class="species-header">
+                        <p class="species-code">Largest fish species</p>
+                        <h3>Whale Shark</h3>
+                    </div>
+                    <ul class="characteristics">
+                        <li><strong>Size:</strong> Enormous but gentle</li>
+                        <li><strong>Clue:</strong> White spots and stripes across the body</li>
+                        <li><strong>Habitat:</strong> Warm tropical oceans and plankton-rich waters</li>
+                    </ul>
+                </article>
+
+                <article class="species-card glass">
+                    <div class="species-thumb-wrap">
+                        <img class="species-thumb" src="../../frontend/images/sharks/whitetip.jpg" alt="Whitetip shark" loading="lazy" />
+                    </div>
+                    <div class="species-header">
+                        <p class="species-code">Reef edge patrol</p>
+                        <h3>Whitetip Shark</h3>
+                    </div>
+                    <ul class="characteristics">
+                        <li><strong>Size:</strong> Compact, slender, and agile</li>
+                        <li><strong>Clue:</strong> White tips on the fins and relaxed reef hovering</li>
+                        <li><strong>Habitat:</strong> Coral reefs, lagoons, and coastal shelves</li>
+                    </ul>
+                </article>
+            </section>
+        </section>
+    </main>
+</body>
+</html>
