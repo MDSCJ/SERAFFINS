@@ -1259,6 +1259,29 @@ html[data-theme="dark"] .tutorial-select-btn.is-selected {
   box-shadow: 0 12px 24px rgba(46, 143, 221, 0.28);
 }
 
+html[data-theme="dark"] .shark-tutorial-page .btn-soft,
+html[data-theme="dark"] .tutorial-select-btn,
+html[data-theme="dark"] .tutorial-copy-btn {
+  background: linear-gradient(120deg, rgba(190, 39, 39, 0.94), rgba(140, 20, 20, 0.94));
+  color: #ffe9e9;
+  border-color: rgba(255, 133, 133, 0.42);
+  box-shadow: 0 12px 24px rgba(120, 20, 20, 0.28);
+}
+
+html[data-theme="dark"] .shark-tutorial-page .btn-soft:hover,
+html[data-theme="dark"] .tutorial-select-btn:hover,
+html[data-theme="dark"] .tutorial-copy-btn:hover {
+  background: linear-gradient(120deg, rgba(210, 52, 52, 0.98), rgba(156, 24, 24, 0.98));
+  box-shadow: 0 14px 28px rgba(120, 20, 20, 0.34);
+}
+
+html[data-theme="dark"] .tutorial-select-btn.is-selected {
+  background: linear-gradient(120deg, rgba(210, 52, 52, 0.98), rgba(156, 24, 24, 0.96));
+  color: #ffe9e9;
+  border-color: rgba(255, 133, 133, 0.5);
+  box-shadow: 0 12px 24px rgba(120, 20, 20, 0.34);
+}
+
 .tutorial-selection-status {
   font-size: 0.88rem;
   font-weight: 600;
@@ -1368,6 +1391,26 @@ html[data-theme="dark"] .tutorial-select-btn.is-selected {
 }
 
 @media (max-width: 768px) {
+  .shark-tutorial-page {
+    width: calc(100vw - 1rem);
+    margin: 1rem auto;
+    box-sizing: border-box;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .tutorial-hero,
+  .tutorial-question,
+  .tutorial-track,
+  .tutorial-track-grid,
+  .tutorial-step {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+
   .key-grid {
     grid-template-columns: 1fr;
   }
@@ -1417,16 +1460,21 @@ html[data-theme="dark"] .tutorial-select-btn.is-selected {
   }
 
   .tutorial-track-grid {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
   }
 
   .tutorial-question {
     padding: 0.85rem;
+    min-width: 0;
   }
 
   .tutorial-question__actions {
     display: grid;
     grid-template-columns: 1fr;
+    width: 100%;
+    min-width: 0;
   }
 
   .tutorial-select-btn {
@@ -1439,12 +1487,48 @@ html[data-theme="dark"] .tutorial-select-btn.is-selected {
     padding: 1rem;
   }
 
+  .tutorial-hero h1 {
+    font-size: clamp(1.25rem, 5.2vw, 1.8rem);
+  }
+
+  .tutorial-hero p,
+  .tutorial-track__head p,
+  .tutorial-step p,
+  .tutorial-question p {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+  }
+
   .tutorial-step {
     padding: 0.8rem;
+    min-width: 0;
   }
 
   .tutorial-code-wrap pre {
     max-height: 300px;
+    width: 100%;
+    min-width: 0;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .tutorial-code-wrap {
+    min-width: 0;
+    width: 100%;
+  }
+
+  .tutorial-code-wrap code {
+    font-size: 0.72rem;
+    line-height: 1.45;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
+  #local-track .tutorial-code-wrap pre,
+  #local-track .tutorial-code-wrap code {
+    overflow-x: auto;
+    white-space: pre-wrap;
   }
 
   .overlay-toggle {

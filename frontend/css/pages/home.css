@@ -256,11 +256,11 @@ h1 {
 }
 
 .experience-content.reverse {
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
 }
 
-.experience-content.reverse .experience-text { order: 2; }
-.experience-content.reverse .experience-image { order: 1; }
+.experience-content.reverse .experience-text { order: 1; }
+.experience-content.reverse .experience-image { order: 2; }
 
 .experience-text h2 {
   font-size: 2rem;
@@ -406,31 +406,55 @@ html[data-theme="dark"] .modal button:hover {
 
 @media (max-width: 768px) {
   .hero {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
     padding: 1.5rem;
     gap: 1.5rem;
+  }
+
+  .hero-copy {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .hero-3d {
+    width: 100%;
+    min-width: 0;
   }
 
   .hero-right-ux {
     margin-left: 0;
     width: 100%;
-    align-self: center;
+    align-self: stretch;
+    align-items: flex-start;
   }
 
   .ux-label {
-    margin-top: -0.5rem;
+    margin-top: 0;
+  }
+
+  .hero-copy p {
+    display: none;
+  }
+
+  .hero-copy h1 {
+    max-width: 100%;
+    min-width: 0;
+    overflow-wrap: anywhere;
   }
 
   .dropping-texts {
     height: 2.5rem;
     margin-top: 0;
     top: -5px;
+    left: 0;
+    justify-content: flex-start;
   }
 
   .dropping-texts > div {
     font-size: 1.6rem;
-    left: 45%;
-    transform: translateX(-50%) translateY(-50%) rotate(-4deg);
+    left: 0;
+    transform: translateY(-50%) rotate(-4deg);
   }
 
   .repeater-marquee {
@@ -467,5 +491,23 @@ html[data-theme="dark"] .modal button:hover {
     width: 100%;
     height: 100%;
     object-fit: cover;
+  }
+
+  .actions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    width: 100%;
+    margin-top: 0.8rem;
+    align-items: flex-start;
+    min-width: 0;
+  }
+
+  .actions .btn {
+    width: fit-content;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    align-self: flex-start;
   }
 }
