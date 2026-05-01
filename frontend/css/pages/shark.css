@@ -127,6 +127,22 @@
   justify-content: center;
 }
 
+html[data-theme="dark"] .shark-key-view .btn,
+html[data-theme="dark"] .shark-key-view .btn-soft,
+html[data-theme="dark"] .shark-key-view .btn-primary {
+  background: linear-gradient(120deg, rgba(190, 39, 39, 0.94), rgba(235, 124, 41, 0.94));
+  color: #fff2ef;
+  border-color: rgba(255, 175, 132, 0.42);
+  box-shadow: 0 12px 24px rgba(120, 20, 20, 0.28);
+}
+
+html[data-theme="dark"] .shark-key-view .btn:hover,
+html[data-theme="dark"] .shark-key-view .btn-soft:hover,
+html[data-theme="dark"] .shark-key-view .btn-primary:hover {
+  background: linear-gradient(120deg, rgba(218, 72, 48, 0.98), rgba(255, 151, 51, 0.98));
+  box-shadow: 0 14px 28px rgba(120, 20, 20, 0.34);
+}
+
 .species-header {
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
   padding-bottom: 0.8rem;
@@ -157,6 +173,7 @@
   overflow: hidden;
   border-radius: 26px;
   padding: 2rem;
+  text-align: center;
 }
 
 .shark-key-hero::before {
@@ -184,10 +201,15 @@
 .shark-key-hero p {
   max-width: 72ch;
   line-height: 1.7;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.shark-key-view .actions {
+  justify-content: center;
 }
 
 .shark-key-hero .subtitle {
-  text-align: left;
   margin-bottom: 0.25rem;
 }
 
@@ -198,6 +220,7 @@
   align-items: center;
   border-radius: 22px;
   padding: 1.4rem;
+  text-align: center;
 }
 
 .key-app-panel__copy h2 {
@@ -215,7 +238,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 0.8rem;
-  justify-content: flex-end;
+  justify-content: center;
 }
 
 .key-app-password {
