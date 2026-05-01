@@ -73,7 +73,7 @@
     </div>
     
     <div class="stats-grid">
-        <article class="stat-card glass">
+        <article class="stat-card glass dashboard-card-swipe" data-swipe-direction="right" data-scroll-reveal>
             <div class="stat-accent stat-accent-users" aria-hidden="true"></div>
             <div class="stat-content">
                 <h3>Active Users</h3>
@@ -82,7 +82,7 @@
             </div>
         </article>
 
-        <article class="stat-card glass">
+        <article class="stat-card glass dashboard-card-swipe" data-swipe-direction="left" data-scroll-reveal>
             <div class="stat-accent stat-accent-total" aria-hidden="true"></div>
             <div class="stat-content">
                 <h3>Total Users</h3>
@@ -91,7 +91,7 @@
             </div>
         </article>
 
-        <article class="stat-card glass clock-card">
+        <article class="stat-card glass clock-card dashboard-card-swipe" data-swipe-direction="right" data-scroll-reveal>
             <div class="stat-content clock-content">
                 <div class="mini-analog-clock" aria-label="Analog clock" title="Local time">
                     <span class="clock-hand hour" id="analogHourHand"></span>
@@ -128,6 +128,13 @@
             </div>
         </div>
     </article>
+
+    <section class="dashboard-video-section" data-desktop-video>
+        <div class="dashboard-video-shell">
+            <video id="dashboardVideo" src="../../frontend/images/videoplayback.mp4" muted loop playsinline autoplay preload="auto"></video>
+            <canvas id="dashboardVideoCanvas" width="1280" height="720"></canvas>
+        </div>
+    </section>
 </section>
 
 <script>

@@ -186,3 +186,94 @@ if (revealTargets.length > 0) {
     revealTargets.forEach((element) => element.classList.add('is-visible'));
   }
 }
+
+const scrollRevealTargets = document.querySelectorAll('[data-scroll-reveal]');
+
+if (scrollRevealTargets.length > 0) {
+  if ('IntersectionObserver' in window) {
+    const swipeObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+
+    scrollRevealTargets.forEach((element) => swipeObserver.observe(element));
+  } else {
+    scrollRevealTargets.forEach((element) => element.classList.add('is-visible'));
+  }
+}
+
+const desktopVideoSection = document.querySelector('[data-desktop-video]');
+const dashboardVideo = document.getElementById('dashboardVideo');
+const dashboardVideoCanvas = document.getElementById('dashboardVideoCanvas');
+const dashboardVideoContext = dashboardVideoCanvas?.getContext('2d', { willReadFrequently: true });
+
+function setDashboardVideoVisibility() {
+  if (!desktopVideoSection || !dashboardVideo || !dashboardVideoCanvas) {
+    return;
+  }
+
+  desktopVideoSection.classList.add('is-active');
+  dashboardVideo.play().catch(() => {});
+}
+
+if (desktopVideoSection && dashboardVideo && dashboardVideoCanvas && dashboardVideoContext) {
+  let hasLoggedDashboardVideoError = false;
+
+  function resizeDashboardVideoCanvas() {
+    const videoWidth = dashboardVideo.videoWidth || 1280;
+    const videoHeight = dashboardVideo.videoHeight || 720;
+
+    dashboardVideoCanvas.width = videoWidth;
+    dashboardVideoCanvas.height = videoHeight;
+  }
+
+  function processDashboardVideoFrame() {
+    if (dashboardVideo.paused || dashboardVideo.ended) {
+      requestAnimationFrame(processDashboardVideoFrame);
+      return;
+    }
+
+    dashboardVideoContext.drawImage(dashboardVideo, 0, 0, dashboardVideoCanvas.width, dashboardVideoCanvas.height);
+
+    try {
+      const frameData = dashboardVideoContext.getImageData(0, 0, dashboardVideoCanvas.width, dashboardVideoCanvas.height);
+      const pixels = frameData.data;
+
+      for (let i = 0; i < pixels.length; i += 4) {
+        const red = pixels[i + 0];
+        const green = pixels[i + 1];
+        const blue = pixels[i + 2];
+
+        if (green > 140 && green > red + 30 && green > blue + 30) {
+          pixels[i + 3] = 0;
+        }
+      }
+
+      dashboardVideoContext.putImageData(frameData, 0, 0);
+    } catch (error) {
+      if (!hasLoggedDashboardVideoError) {
+        console.error('Dashboard video canvas tainted or unavailable.', error);
+        hasLoggedDashboardVideoError = true;
+        dashboardVideo.pause();
+      }
+    }
+
+    requestAnimationFrame(processDashboardVideoFrame);
+  }
+
+  dashboardVideo.addEventListener('loadedmetadata', () => {
+    resizeDashboardVideoCanvas();
+  });
+
+  dashboardVideo.addEventListener('play', () => {
+    resizeDashboardVideoCanvas();
+    requestAnimationFrame(processDashboardVideoFrame);
+  });
+
+  resizeDashboardVideoCanvas();
+  setDashboardVideoVisibility();
+}
