@@ -1086,6 +1086,38 @@ html[data-theme="dark"] body.shark-cnn-view .cnn-container .btn-logout:hover {
   gap: 0.8rem;
 }
 
+.cnn-resource-accordion {
+  display: grid;
+  gap: 0;
+}
+
+.cnn-resource-accordion > summary {
+  list-style: none;
+  cursor: pointer;
+}
+
+.cnn-resource-accordion > summary::-webkit-details-marker {
+  display: none;
+}
+
+.cnn-resource-accordion__panel {
+  display: grid;
+  gap: 0.8rem;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transform: translateY(-8px);
+  transition: max-height 320ms ease, opacity 220ms ease, transform 320ms ease, margin-top 320ms ease;
+  margin-top: 0;
+}
+
+.cnn-resource-accordion[open] .cnn-resource-accordion__panel {
+  max-height: 240px;
+  opacity: 1;
+  transform: translateY(0);
+  margin-top: 0.8rem;
+}
+
 .cnn-resource-link {
   display: grid;
   gap: 0.35rem;
@@ -1097,6 +1129,7 @@ html[data-theme="dark"] body.shark-cnn-view .cnn-container .btn-logout:hover {
   text-decoration: none;
   box-shadow: 0 12px 24px rgba(98, 159, 206, 0.08);
   transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+  align-content: start;
 }
 
 .cnn-resource-link:hover {
@@ -1129,12 +1162,14 @@ html[data-theme="dark"] body.shark-cnn-view .cnn-container .btn-logout:hover {
 .cnn-resource-link strong {
   font-size: 1rem;
   line-height: 1.25;
+  white-space: normal;
 }
 
 .cnn-resource-link small {
   color: var(--muted);
   font-size: 0.84rem;
   line-height: 1.5;
+  white-space: normal;
 }
 
 html[data-theme="dark"] .cnn-resource-drawer {
@@ -1168,8 +1203,24 @@ html[data-theme="dark"] .cnn-resource-link--primary {
   background: linear-gradient(135deg, rgba(79, 197, 255, 0.18), rgba(34, 197, 94, 0.12));
 }
 
+html[data-theme="dark"] .cnn-resource-accordion[open] > summary {
+  border-color: rgba(79, 197, 255, 0.34);
+}
+
 html[data-theme="dark"] .cnn-resource-link--tutorial {
   background: linear-gradient(135deg, rgba(255, 197, 76, 0.2), rgba(79, 197, 255, 0.16));
+}
+
+html[data-theme="reading"] .cnn-resource-link--primary {
+  background: linear-gradient(135deg, rgba(255, 197, 76, 0.18), rgba(209, 128, 48, 0.12));
+}
+
+html[data-theme="reading"] .cnn-resource-link--tutorial {
+  background: linear-gradient(135deg, rgba(255, 221, 160, 0.3), rgba(255, 197, 76, 0.16));
+}
+
+html[data-theme="reading"] .cnn-resource-accordion[open] > summary {
+  border-color: rgba(210, 180, 140, 0.34);
 }
 
 html[data-theme="dark"] .tutorial-select-btn.is-selected {
@@ -1553,5 +1604,17 @@ html[data-theme="dark"] .tutorial-select-btn.is-selected {
 
   .prediction-panel__meta {
     justify-items: start;
+  }
+
+  .experience-content.reverse {
+    grid-template-columns: 1fr;
+  }
+
+  .experience-content.reverse .experience-text {
+    order: 1;
+  }
+
+  .experience-content.reverse .experience-image {
+    order: 2;
   }
 }

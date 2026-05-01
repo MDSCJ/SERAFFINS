@@ -165,3 +165,24 @@ for (const card of tiltCards) {
     card.style.transform = "rotateX(0deg) rotateY(0deg) translateZ(0px)";
   });
 }
+
+const revealTargets = document.querySelectorAll('.hero, .experience-section');
+
+if (revealTargets.length > 0) {
+  revealTargets.forEach((element) => element.classList.add('reveal-on-scroll'));
+
+  if ('IntersectionObserver' in window) {
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.16 });
+
+    revealTargets.forEach((element) => revealObserver.observe(element));
+  } else {
+    revealTargets.forEach((element) => element.classList.add('is-visible'));
+  }
+}
